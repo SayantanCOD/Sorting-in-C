@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+ main()
+{
+
+    int arr[10], num, x, y, temp,swap,counter = 0;    
+
+    printf("Please Enter the Number of Elements you want in the array: ");
+
+    scanf("%d", &num);    
+
+    printf("Please Enter the Value of Elements: ");
+
+    for(x = 0; x < num; x++)
+
+        scanf("%d", &arr[x]);
+
+    for(x = 0; x < num - 1; x++)
+	{       
+      swap = 0 ;
+        for(y = 0; y < num - x - 1; y++)
+		{          
+          counter++ ;
+            if(arr[y] > arr[y + 1])
+			{               
+
+                temp = arr[y];
+
+                arr[y] = arr[y + 1];
+
+                arr[y + 1] = temp;
+                swap = 1 ;
+
+            }
+
+        }
+         if(swap==0)
+         break;
+    }
+
+    printf("Array after implementing bubble sort: ");
+
+    for(x = 0; x < num; x++){
+
+        printf("%d  ", arr[x]);
+
+    }
+    printf("\nTotal counte of loop :%d",counter);
+    
+
+}
